@@ -17,7 +17,7 @@ const mongoose = require("mongoose");
 const db = Config.mongoURL;
 mongoose
   .connect(db, {
-    addNewUrlParser: true,
+    useNewUrlParser: true,
     useCreateIndex: true,
     useUnifiedTopology: true,
   })
@@ -26,7 +26,7 @@ mongoose
 
 // creating http server
 const PORT = Config.PORT;
-const port = prosess.ENV.PORT || PORT;
+const port = process.env.PORT || PORT;
 
 app.listen(port, () => {
   console.log("server started at port ", port);
