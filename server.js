@@ -28,6 +28,10 @@ mongoose
 const PORT = Config.PORT;
 const port = process.env.PORT || PORT;
 
+app.use("/ping", (req, res) => {
+  res.send("PONG");
+});
+
 app.listen(port, () => {
   console.log("server started at port ", port);
 });
